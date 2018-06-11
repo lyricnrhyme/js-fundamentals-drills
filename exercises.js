@@ -416,7 +416,13 @@ var objectToArray = function(obj) {
  * @param {Array}
  * @return {Object}
  */
-var arrayToObject;
+var arrayToObject = function(arr) {
+  var newObj = {};
+  for (var i=0; i<arr.length; i++) {
+    newObj[arr[i]] = false;
+  }
+  return newObj;
+};
 
 /* #arraysToObject
  *
@@ -538,7 +544,7 @@ module.exports = {
   getValues: getValues,
   getKeys: getKeys,
   objectToArray: objectToArray,
-  arrayToObject: null,
+  arrayToObject: arrayToObject,
   arraysToObject: null,
   objectsToTuples: null,
   mapArrayValues: null,
