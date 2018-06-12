@@ -550,10 +550,20 @@ var charCountMap = function(arr) {
  *
  * takes in an array of strings and returns an object with the string as the key and the number of occurences as the value.
  *
- * @param {String}
- * @return {Bool}
+ * @param {Array}
+ * @return {Object}
  */
-var frequencyMap;
+var frequencyMap = function(arr) {
+  var newObj = {};
+  for (var i=0; i<arr.length; i++) {
+    if (!!newObj[arr[i]]) {
+      newObj[arr[i]] += 1
+    } else {
+      newObj[arr[i]] = 1;
+    }
+  }
+  return newObj;
+};
 
 /* #tupleConvertToObject
  *
@@ -604,6 +614,6 @@ module.exports = {
   arrayToObjectNums: arrayToObjectNums,
   stringToKeys: stringToKeys,
   charCountMap: charCountMap,
-  frequencyMap: null,
+  frequencyMap: frequencyMap,
   tupleConvertToObject: null
 }
